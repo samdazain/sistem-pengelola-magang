@@ -13,8 +13,23 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('role_id');
+            $table->string('username')->unique();
             $table->string('name');
+            $table->string('npm');
+            $table->text('alamat');
+            $table->string('domisili');
+            $table->string('fakultas');
+            $table->string('jurusan');
+            $table->string('univ');
+            $table->date('tanggal_lahir');
+            $table->string('no_telp');
             $table->string('email')->unique();
+            $table->string('jenjang');
+            $table->year('tahun_masuk');
+            $table->text('soft_skill');
+            $table->text('hard_skill');
+            $table->string('kontak_darurat'); // Kontak darurat (ortu)
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
