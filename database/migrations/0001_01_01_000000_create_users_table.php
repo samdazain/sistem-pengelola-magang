@@ -13,23 +13,23 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('role_id');
-            $table->string('username')->unique();
-            $table->string('name');
-            $table->string('npm');
-            $table->text('alamat');
-            $table->string('domisili');
-            $table->string('fakultas');
-            $table->string('jurusan');
-            $table->string('univ');
-            $table->date('tanggal_lahir');
-            $table->string('no_telp');
+            $table->unsignedBigInteger('role_id')->default(1);
+            $table->string('username')->unique()->nullable(); 
+            $table->string('name')->nullable(); 
+            $table->string('npm')->nullable(); 
+            $table->text('alamat')->nullable(); 
+            $table->string('domisili')->nullable(); 
+            $table->string('fakultas')->nullable(); 
+            $table->string('jurusan')->nullable(); 
+            $table->string('univ')->nullable(); 
+            $table->date('tanggal_lahir')->nullable(); 
+            $table->string('no_telp')->nullable(); 
             $table->string('email')->unique();
-            $table->string('jenjang');
-            $table->year('tahun_masuk');
-            $table->text('soft_skill');
-            $table->text('hard_skill');
-            $table->string('kontak_darurat'); // Kontak darurat (ortu)
+            $table->string('jenjang')->nullable(); 
+            $table->year('tahun_masuk')->nullable(); 
+            $table->text('soft_skill')->nullable(); 
+            $table->text('hard_skill')->nullable(); 
+            $table->string('kontak_darurat')->nullable(); 
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
