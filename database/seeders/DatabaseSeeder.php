@@ -21,10 +21,5 @@ class DatabaseSeeder extends Seeder
             LamaranSeeder::class,
             PenilaianSeeder::class,
         ]);
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
     }
 }
