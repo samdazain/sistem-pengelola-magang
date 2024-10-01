@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('foto_full_body'); // File foto full body
 
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on(table: 'users')->onDelete('cascade');
+
         });
     }
 

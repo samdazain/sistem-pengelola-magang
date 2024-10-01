@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 
+
 // Route untuk register
 Route::get('/register', [AuthController::class, 'create'])->name('register.create'); // Menampilkan form register
 Route::post('/register', [AuthController::class, 'store'])->name('register.store'); // Menyimpan data pengguna baru

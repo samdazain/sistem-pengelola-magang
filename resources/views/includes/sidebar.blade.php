@@ -9,7 +9,7 @@
       Apps
     </li>
     <li class="{{ request()->is('pelamar') ? 'active-page' : '' }}">
-      <a href="{{route('pelamar.index')}}"><i data-feather="inbox"></i>Daftar Pelamar</a>
+      <a href="{{route('pelamar.index')}}"><i data-feather="inbox"></i>Daftar Pengguna</a>
     </li>
     <li class="{{ request()->is('posisi') ? 'active-page' : '' }}">
       <a href="{{route('posisi.index')}}"><i data-feather="calendar"></i>Daftar Posisi</a>

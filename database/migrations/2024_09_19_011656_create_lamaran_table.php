@@ -17,11 +17,8 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id'); // Relasi ke tabel 'users'
             $table->enum('status', ['diproses', 'diterima', 'ditolak', 'selesai'])->nullable(); // Status lamaran
             $table->string('link_portofolio')->nullable(); // Link ke portofolio
-
-
             $table->timestamps();
-            $table->foreign('job_position_id')->references('id')->on('posisipekerjaan')->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
         });
     }
 

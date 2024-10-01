@@ -19,7 +19,7 @@ class PosisiController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.posisi.create');
     }
 
     /**

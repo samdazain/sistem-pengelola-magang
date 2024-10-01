@@ -13,7 +13,7 @@ class PosisiPekerjaanSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('posisipekerjaan')->insert([
+        DB::table('posisi_pekerjaan')->insert([
             'title' => 'UI/UX Designer',
             'location' => 'daring',
             'description' => 'Posisi sebagai desainer UI/UX untuk proyek startup.',
