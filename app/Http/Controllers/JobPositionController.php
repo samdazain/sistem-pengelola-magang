@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PelamarController extends Controller
+class JobPositionController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('pages.pelamar.index');
+        return view('pages.job_position.index');
     }
 
     /**

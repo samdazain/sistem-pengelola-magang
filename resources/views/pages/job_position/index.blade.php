@@ -6,7 +6,7 @@
         <h5 class="card-title">Daftar Lowongan Magang</h5>
         <p>Menu "Daftar Lowongan Magang" memungkinkan admin untuk mengelola, memantau, dan memperbarui informasi lowongan magang secara efisien</p>
 
-        <a href="{{route('posisi.create')}}" class="btn btn-success btn-sm mb-4">
+        <a href="" class="btn btn-success btn-sm mb-4">
             <i class="fas fa-plus"></i> Tambah
         </a>
         <table id="zero-conf" class="display" style="width:100%">

@@ -8,14 +8,14 @@
     <li class="sidebar-title">
       Apps
     </li>
-    <li class="{{ request()->is('pelamar') ? 'active-page' : '' }}">
-      <a href="{{route('pelamar.index')}}"><i data-feather="inbox"></i>Daftar Pengguna</a>
+    <li class="{{ request()->is('users') ? 'active-page' : '' }}">
+      <a href="{{route('users.index')}}"><i data-feather="inbox"></i>Daftar Pengguna</a>
     </li>
-    <li class="{{ request()->is('posisi') ? 'active-page' : '' }}">
-      <a href="{{route('posisi.index')}}"><i data-feather="calendar"></i>Daftar Posisi</a>
+    <li class="{{ request()->is('job-position') ? 'active-page' : '' }}">
+      <a href="{{route('job-position.index')}}"><i data-feather="calendar"></i>Daftar Posisi</a>
     </li>
-    <li class="{{ request()->is('penilaian') ? 'active-page' : '' }}">
-      <a href="{{route('penilaian.index')}}"><i data-feather="user"></i>Daftar Penilaian</a>
+    <li class="{{ request()->is('evaluation') ? 'active-page' : '' }}">
+      <a href="{{route('evaluation.index')}}"><i data-feather="user"></i>Daftar Penilaian</a>
     </li>
     <li class="{{ request()->is('admin') ? 'active-page' : '' }}">
       <a href="{{route('admin.index')}}"><i data-feather="message-circle"></i>Daftar Admin</a>

@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PosisiController extends Controller
+class ApplicationController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('pages.posisi.index');
+        //
     }
 
     /**
@@ -19,7 +19,7 @@ class PosisiController extends Controller
      */
     public function create()
     {
-        return view('pages.posisi.create');
+        //
     }
 
     /**
