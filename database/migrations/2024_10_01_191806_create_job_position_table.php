@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('job_position', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->enum('location', ['daring', 'onsite']);
+            $table->text('description');
+            $table->date('closing_date');
+            $table->date('announcement_date');
+            $table->text('requirements');
+            $table->string('status')->nullable();
+            $table->integer('quota');
             $table->timestamps();
         });
     }

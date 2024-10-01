@@ -8,10 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Evaluation extends Model
 {
     use HasFactory;
-    // Nama tabel yang terkait
     protected $table = 'evaluation';
 
-    // Kolom yang bisa diisi secara massal
     protected $fillable = [
         'user_id',
         'discipline',
