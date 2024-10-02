@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('role_id')->default(1);
+            $table->unsignedBigInteger('role_id')->default(0); // user=> 0, admin => 1
             $table->string('username')->unique()->nullable();
             $table->string('name')->nullable();
             $table->string('npm')->nullable();

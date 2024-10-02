@@ -24,7 +24,7 @@
     <div class="full d-flex justify-content-center align-items-center">
         <div class="login-card card">
             <div class="card-body">
-                <form action="/login" method="post" novalidate>
+                <form action="{{ route('login') }}" method="post" novalidate>
                     @csrf
 
                     <h4 class="">Si Magang</h4>

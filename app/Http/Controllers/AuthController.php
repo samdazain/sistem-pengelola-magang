@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\View\View;
 
 class AuthController extends Controller
 {
@@ -15,20 +16,22 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        // Memvalidasi dan memproses data login
-        $request->validate([
+        $input = $request->all();
+
+        $this->validate($request, [
             'email' => 'required|email',
             'password' => 'required',
         ]);
-        
-        if (auth()->attempt($request->only(['email', 'password']))) {
-            $request->session()->regenerate();
-            return redirect('/');
-        }
 
-        return back()->withErrors([
-            'email' => 'Email or password does not match'
-        ])->onlyInput('email');
+        if (auth()->attempt(['email' => $input['email'], 'password' => $input['password']])) {
+            // Redirect berdasarkan role
+            return redirect()->route(auth()->user()->role_id == 1 ? 'admin.index' : 'user.dashboard'); // Redirect ke dashboard admin atau user
+        } else {
+            return redirect()->route('login')
+                ->withErrors([
+                    'email' => 'Email or password does not match'
+                ])->onlyInput('email');
+        }
     }
 
     public function create()
@@ -50,10 +53,30 @@ class AuthController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role_id' => 1, // Set role_id menjadi 1 secara default
+            'role_id' => 0, // Set role_id menjadi 0 untuk peserta
         ]);
 
-        // Redirect atau memberikan respon setelah berhasil
         return redirect('/login');
+    }
+
+    public function logout(Request $request)
+    {
+        auth()->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/login')->with('success', 'Anda telah berhasil logout.');
+    }
+
+    // Metode untuk menampilkan dashboard pengguna
+    public function userDashboard(): View
+    {
+        return view('userDashboard'); // Ganti dengan view yang sesuai
+    }
+
+    // Metode untuk menampilkan dashboard admin
+    public function adminDashboard(): View
+    {
+        return view('adminDashboard'); // Ganti dengan view yang sesuai
     }
 }
