@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function index(){
-        return view('pages.users.index');
+        return view('pages.role_admin.users.index');
     }
 }
