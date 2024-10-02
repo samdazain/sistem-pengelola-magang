@@ -11,7 +11,7 @@ class JobPositionController extends Controller
      */
     public function index()
     {
-        return view('pages.job_position.index');
+        return view('pages.role_admin.job_position.index');
     }
 
     /**
