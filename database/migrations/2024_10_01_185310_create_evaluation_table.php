@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('duration_period');
             $table->string('certificate')->nullable();
             $table->timestamps();
+            $table->softDeletes();
 
         });
     }

@@ -6,7 +6,7 @@
         <h5 class="card-title">Daftar Lowongan Magang</h5>
         <p>Menu "Daftar Lowongan Magang" memungkinkan admin untuk mengelola, memantau, dan memperbarui informasi lowongan magang secara efisien</p>
 
-        <a href="" class="btn btn-success btn-sm mb-4">
+        <a href="{{route('job-position.create')}}" class="btn btn-success btn-sm mb-4">
             <i class="fas fa-plus"></i> Tambah
         </a>
         <table id="zero-conf" class="display" style="width:100%">
@@ -14,42 +14,49 @@
                 <tr>
                     <th>title</th>
                     <th>lokasi</th>
-                    <th>deskripsi</th>
                     <th>closing date</th>
                     <th>announcement date</th>
-                    <th>requirements</th>
+                    <th>quota</th>
                     <th>status</th>
                     <th>aksi</th>
                 </tr>
             </thead>
             <tbody>
+                @foreach ($jobPositions as $job)
                 <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>61</td>
-                    <td>2011/04/25</td>
-                    <td>$320,800</td>
-                    <td>ksal</td>
+                    <td>{{$job->title}}</td>
+                    <td>{{$job->location}}</td>
+                    <td>{{$job->closing_date}}</td>
+                    <td>{{$job->announcement_date}}</td>
+                    <td>{{$job->quota}}</td>
+                    <td>{{$job->status}}</td>
                     <td class="d-flex">
-                        <a href="/edit/1" class="btn btn-warning btn-sm mx-2">
+                        <a href="{{ route('job-position.edit', $job->id) }}" class="btn btn-warning btn-sm ">
                             <i class="fas fa-edit"></i>
                         </a>
-                        <a href="/detail/1" class="btn btn-info btn-sm">
+                        <a href="{{ route('job-position.show', $job->id)}}" class="btn btn-info btn-sm mx-2">
                             <i class="fas fa-eye"></i>
                         </a>
+                        <form action="{{ route('job-position.destroy', $job->id) }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm" >
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </form>
                     </td>
                 </tr>
+                @endforeach
+
 
             </tbody>
             <tfoot>
                 <tr>
                     <th>title</th>
                     <th>lokasi</th>
-                    <th>deskripsi</th>
                     <th>closing date</th>
                     <th>announcement date</th>
-                    <th>requirements</th>
+                    <th>quota</th>
                     <th>status</th>
                     <th>aksi</th>
                 </tr>
