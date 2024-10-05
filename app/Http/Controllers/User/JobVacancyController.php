@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
      */
     public function index()
     {
-        return view('user.job_vacancy.index');
+        return view('user.pages.job_vacancy.index');
     }
 
     /**
