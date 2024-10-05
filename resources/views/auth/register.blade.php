@@ -7,7 +7,7 @@
     <title>Register</title>
 
     {{-- Menggunakan style blade untuk menyamakan desain --}}
-    @include('includes.style')
+    @include('admin.includes.style')
 
     <style>
         .register-card {
@@ -75,7 +75,7 @@
     </div>
 
     {{-- Menggunakan script blade untuk menyamakan desain --}}
-    @include('includes.script')
+    @include('admin.includes.script')
 </body>
 
 </html>

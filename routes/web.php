@@ -7,7 +7,6 @@ use App\Http\Controllers\Admin\EvaluationController;
 use App\Http\Controllers\Admin\JobPositionController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\User\JobVacancyController;
-use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -34,7 +33,7 @@ Route::middleware(['auth'])->group(function () {
         Route::resource('job-position', JobPositionController::class);
         Route::resource('admin', AdminController::class);
         Route::get('/evaluation', [EvaluationController::class, 'index'])->name('evaluation.index');
-        Route::get('/users', [UserController::class, 'index'])->name('users.index');
+        // Route::get('/users', [JobVacancyController::class, 'index'])->name('users.index');
 
     });
 });

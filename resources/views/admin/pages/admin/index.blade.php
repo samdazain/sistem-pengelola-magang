@@ -1,43 +1,35 @@
-@extends('layouts.default')
+@extends('admin.layouts.default')
 
 @section('content')
 <div class="card">
     <div class="card-body">
-        <h5 class="card-title">Daftar Lowongan Magang</h5>
-        <p>Menu "Daftar Lowongan Magang" memungkinkan admin untuk mengelola, memantau, dan memperbarui informasi lowongan magang secara efisien</p>
+        <h5 class="card-title">Daftar Akun Admin</h5>
+        <p>Menu "Daftar Akun Admin" memungkinkan admin untuk mengelola, memantau, dan memperbarui informasi Akun Admin secara efisien</p>
 
-        <a href="{{route('job-position.create')}}" class="btn btn-success btn-sm mb-4">
+        <a href="{{route('admin.create')}}" class="btn btn-success btn-sm mb-4">
             <i class="fas fa-plus"></i> Tambah
         </a>
         <table id="zero-conf" class="display" style="width:100%">
             <thead>
                 <tr>
-                    <th>title</th>
-                    <th>lokasi</th>
-                    <th>closing date</th>
-                    <th>announcement date</th>
-                    <th>quota</th>
-                    <th>status</th>
+                    <th>username</th>
+                    <th>email</th>
                     <th>aksi</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($jobPositions as $job)
+                @foreach ($admins as $admin)
                 <tr>
-                    <td>{{$job->title}}</td>
-                    <td>{{$job->location}}</td>
-                    <td>{{$job->closing_date}}</td>
-                    <td>{{$job->announcement_date}}</td>
-                    <td>{{$job->quota}}</td>
-                    <td>{{$job->status}}</td>
+                    <td>{{$admin->username}}</td>
+                    <td>{{$admin->email}}</td>
                     <td class="d-flex">
-                        <a href="{{ route('job-position.edit', $job->id) }}" class="btn btn-warning btn-sm ">
+                        <a href="{{route('admin.edit', $admin->id)}}" class="btn btn-warning btn-sm ">
                             <i class="fas fa-edit"></i>
                         </a>
-                        <a href="{{ route('job-position.show', $job->id)}}" class="btn btn-info btn-sm mx-2">
+                        <a href="{{route('admin.show', $admin->id)}}" class="btn btn-info btn-sm mx-2">
                             <i class="fas fa-eye"></i>
                         </a>
-                        <form action="{{ route('job-position.destroy', $job->id) }}" method="POST" style="display:inline;">
+                        <form action="{{route('admin.destroy', $admin->id)}}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm" >
@@ -46,18 +38,14 @@
                         </form>
                     </td>
                 </tr>
-                @endforeach
+                @endforeach
 
 
             </tbody>
             <tfoot>
                 <tr>
-                    <th>title</th>
-                    <th>lokasi</th>
-                    <th>closing date</th>
-                    <th>announcement date</th>
-                    <th>quota</th>
-                    <th>status</th>
+                    <th>username</th>
+                    <th>email</th>
                     <th>aksi</th>
                 </tr>
             </tfoot>

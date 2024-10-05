@@ -14,7 +14,7 @@ class JobPositionController extends Controller
     public function index()
     {
         $jobPositions = JobPosition::whereNull('deleted_at')->orderBy('created_at', 'desc')->get();
-        return view('pages.role_admin.job_position.index', compact('jobPositions'));
+        return view('admin.pages.job_position.index', compact('jobPositions'));
     }
 
     /**
@@ -22,7 +22,7 @@ class JobPositionController extends Controller
      */
     public function create()
     {
-        return view('pages.role_admin.job_position.create');
+        return view('admin.pages.job_position.create');
     }
 
     /**
@@ -63,7 +63,7 @@ class JobPositionController extends Controller
     public function show($id)
     {
         $jobDetail = JobPosition::find($id);
-        return view('pages.role_admin.job_position.show', compact('jobDetail'));
+        return view('admin.pages.job_position.show', compact('jobDetail'));
 
     }
 
@@ -73,7 +73,7 @@ class JobPositionController extends Controller
     public function edit(string $id)
     {
         $jobDetail = JobPosition::find($id);
-        return view('pages.role_admin.job_position.edit', compact('jobDetail'));
+        return view('admin.pages.job_position.edit', compact('jobDetail'));
     }
 
     /**

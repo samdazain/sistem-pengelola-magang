@@ -14,7 +14,7 @@
     <title>Circl - Responsive Admin Dashboard Template</title>
 
     <!-- Styles -->
-    @include('includes.style')
+    @include('admin.includes.style')
     @stack('custom-style')
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -30,11 +30,11 @@
     <div class="page-container">
         <div class="page-header">
             {{-- navbar  --}}
-            @include('includes.navbar')
+            @include('admin.includes.navbar')
         </div>
         <div class="page-sidebar">
             {{-- sidebar  --}}
-            @include('includes.sidebar')
+            @include('admin.includes.sidebar')
         </div>
         <div class="page-content">
             {{-- main  --}}
@@ -45,7 +45,7 @@
     </div>
 
     <!-- Javascripts -->
-    @include('includes.script')
+    @include('admin.includes.script')
     @stack('custom-scripts')
 </body>
 

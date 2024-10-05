@@ -16,7 +16,7 @@ class AdminController extends Controller
     public function index()
     {
         $admins = User::where('role_id', 1)->whereNull('deleted_at')->orderBy('created_at', 'desc')->get();
-        return view('pages.role_admin.admin.index', compact('admins'));
+        return view('admin.pages.admin.index', compact('admins'));
     }
 
     /**
@@ -24,7 +24,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return view('pages.role_admin.admin.create');
+        return view('admin.pages.admin.create');
     }
 
     /**
@@ -50,7 +50,7 @@ class AdminController extends Controller
     public function show(string $id)
     {
         $admin = user::where('id', $id)->first();
-        return view('pages.role_admin.admin.show', compact('admin'));
+        return view('admin.pages.admin.show', compact('admin'));
     }
 
     /**
@@ -59,7 +59,7 @@ class AdminController extends Controller
     public function edit($id)
     {
         $admin = user::where('id', $id)->first();
-        return view('pages.role_admin.admin.edit', compact('admin'));
+        return view('admin.pages.admin.edit', compact('admin'));
     }
 
     /**

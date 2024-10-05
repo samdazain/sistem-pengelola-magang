@@ -11,7 +11,7 @@ class AuthController extends Controller
 {
     public function index()
     {
-        return view('pages.login');
+        return view('auth.login');
     }
 
     public function login(Request $request)
@@ -35,7 +35,7 @@ class AuthController extends Controller
 
     public function create()
     {
-        return view('pages.register'); // Menampilkan halaman register
+        return view('auth.register'); // Menampilkan halaman register
     }
 
     public function store(Request $request)

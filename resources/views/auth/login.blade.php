@@ -7,7 +7,7 @@
     <title>Login</title>
 
     {{-- Menggunakan style blade untuk menyamakan desain --}}
-    @include('includes.style')
+    @include('admin.includes.style')
 
     <style>
         .login-card {
@@ -61,7 +61,7 @@
     </div>
 
     {{-- Menggunakan script blade untuk menyamakan desain --}}
-    @include('includes.script')
+    @include('admin.includes.script')
 
     @if (session('success'))
         <div class="alert alert-success">
