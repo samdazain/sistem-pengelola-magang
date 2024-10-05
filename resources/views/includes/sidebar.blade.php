@@ -2,15 +2,13 @@
     <li class="sidebar-title">
       Main
     </li>
-    <li class="{{ request()->is('/') ? 'active-page' : '' }}">
-      <a href="{{ route('admin.index') }}"><i data-feather="home"></i>Dashboard</a>
+    <li class="{{ request()->is('dashboard') ? 'active-page' : '' }}">
+      <a href="{{ route('dashboard.index') }}"><i data-feather="home"></i>Dashboard</a>
     </li>
     <li class="sidebar-title">
       Apps
     </li>
-    <li class="{{ request()->is('users') ? 'active-page' : '' }}">
-      <a href="{{ route('users.index') }}"><i data-feather="inbox"></i>Daftar Pengguna</a>
-    </li>
+
     <li class="{{ request()->is('job-position') ? 'active-page' : '' }}">
       <a href="{{ route('job-position.index') }}"><i data-feather="calendar"></i>Daftar Posisi</a>
     </li>

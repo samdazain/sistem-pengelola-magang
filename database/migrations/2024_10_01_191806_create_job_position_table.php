@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('status')->nullable();
             $table->integer('quota');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

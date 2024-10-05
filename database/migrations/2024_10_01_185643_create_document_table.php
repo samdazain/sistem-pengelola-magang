@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('half_body_photo'); // Foto setengah badan
             $table->string('full_body_photo'); // Foto full body
             $table->timestamps();
+            $table->softDeletes();
 
         });
     }
