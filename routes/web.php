@@ -1,12 +1,12 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\EvaluationController;
 use App\Http\Controllers\Admin\JobPositionController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\User\JobVacancyController;
+use App\Http\Controllers\User\ProfileController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,9 +23,14 @@ Route::get('/', function () {
 Route::get('/register', [AuthController::class, 'create'])->name('register.create');
 Route::post('/register', [AuthController::class, 'store'])->name('register.store');
 
+Route::get('/', function () {
+    return view('user.pages.index');
+})->name('user.pages.index');
+
 Route::middleware(['auth'])->group(function () {
     Route::middleware('user-access:0')->group(function () {
-        Route::get('/job-vacancy', [JobVacancyController::class, 'index'])->name('jobVacancy.index');
+        Route::get('/job-vacancy', [JobVacancyController::class, 'index'])->name('user.dashboard');
+        Route::get('/profile', [ProfileController::class, 'index'])->name('user.profile');
     });
 
     Route::middleware('user-access:1')->group(function () {

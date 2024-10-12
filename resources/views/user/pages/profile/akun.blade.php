@@ -46,18 +46,18 @@
                 </div>
                 <div class="grid gap-3 bg-white p-6 rounded-lg border">
                     <a href="#data-diri">
-                        <div class="flex gap-3 items-start p-4 bg-primary rounded-lg">
-                            <img src="{{ asset('assets/images/user/Message.svg') }}" alt="Bag">
+                        <div class="flex gap-3 items-start p-4  border border-text  rounded-lg">
+                            <img src="{{ asset('assets/images/user/Message-2.svg') }}" alt="Bag">
                             <div>
-                                <p class="font-semibold mb-1 text-white">Data Diri</p>
+                                <p class="font-semibold mb-1 text-text">Data Diri</p>
                             </div>
                         </div>
                     </a>
                     <a href="#pengaturan-akun">
-                        <div class="flex gap-3 items-start p-4 border border-text rounded-lg">
-                            <img src="{{ asset('assets/images/user/Lock.svg') }}" alt="Bag">
+                        <div class="flex gap-3 items-start p-4 bg-primary rounded-lg">
+                            <img src="{{ asset('assets/images/user/Lock-2.svg') }}" alt="Bag">
                             <div>
-                                <p class="font-semibold mb-1 text-text">Pengaturan Akun</p>
+                                <p class="font-semibold mb-1 text-white">Pengaturan Akun</p>
                             </div>
                         </div>
                     </a>
@@ -77,94 +77,50 @@
 
 
             <div class="w-3/5 flex flex-col gap-4">
-                <div class="bg-white px-8 py-8 rounded-lg border">
-                    <h2 class="text-3xl font-semibold mb-3">Upload CV Mu Disini</h2>
-                    <form class="flex gap-4">
-                        <div class="flex-grow">
-                            <input id="posisi" name="posisi" type="text"
-                                class="block w-full h-14 px-5 rounded-md border border-gray-300 shadow-sm text-gray-400 focus:text-gray-900 sm:text-sm"
-                                placeholder="Posisi">
-                        </div>
-                        <div class="w-auto">
-                            <button type="submit"
-                                class="h-14 w-14 bg-primary text-white rounded-md flex items-center justify-center hover:bg-opacity-90">
-                                <img src="{{ asset('assets/images/user/Arrow - Bottom.svg') }}" alt="Search"
-                                    class="w-7 h-7">
-                            </button>
-                        </div>
-                    </form>
-                </div>
-                <div class="bg-white px-8 pt-10 pb-20 rounded-lg border">
+                <div class="bg-white px-8 py-10 rounded-lg border">
                     <!-- Tab Headers -->
-                    <div class="flex gap-8 border-b border-gray-300 pb-3">
-                        <label class="cursor-pointer text-primary font-bold pb-2 text-lg">
-                            Data Pribadi
-                        </label>
-
-                        <label class="cursor-pointer pb-2 text-lg">
-                            Dokumen Lainnya
-                        </label>
+                    <div class="grid gap-1 border-b border-gray-300 pb-3">
+                        <h1 class="text-lg font-bold">Pengaturan Keamanan</h1>
+                        <p>Atur Informasi Kontak dan Password Akun</p>
                     </div>
                     <form class="grid gap-6 mt-6">
                         <!-- Daftar dokumen -->
                         <div class="flex flex-col gap-6">
                             <!-- Dokumen Item -->
-                            <div class="pb-6 border-b border-gray-300">
-                                <h2 class="text-lg font-semibold mb-2">Data Pribadi</h2>
+                            <div>
+                                <h2 class="text-lg font-semibold mb-2">Email</h2>
                                 <div class="flex gap-4">
                                     <input id="pakta-integritas" name="pakta-integritas" type="text"
                                         class="block w-full h-14 px-5 rounded-md border border-gray-300 shadow-sm text-gray-400 focus:text-gray-900 text-base"
-                                        placeholder="Pastikan data pribadi benar untuk mempermudah proses pendaftaran">
+                                        placeholder="example@gmail.com">
                                     <button type="submit"
-                                        class="h-14 w-16 bg-primary text-white rounded-md flex items-center justify-center hover:bg-opacity-90">
-                                        <img src="{{ asset('assets/images/user/Edit - 3.svg') }}" alt="Edit"
-                                            class="w-7 h-7">
+                                        class="h-14 w-28 bg-primary text-white rounded-md flex items-center justify-center hover:bg-opacity-90">
+                                        Edit
                                     </button>
                                 </div>
                             </div>
-
-                            <h2 class="text-lg font-semibold -mb-2">Biodata</h2>
-                            <div class="flex gap-4">
-                                <div class="w-6/12">
-                                    <h2 class="text-lg font-semibold mb-2">Tentang Saya</h2>
-                                    <p>Data Belum Diisi</p>
-                                </div>
-                                <div class="w-6/12">
-                                    <h2 class="text-lg font-semibold mb-2">Jenis Kelamin</h2>
-                                    <p>Data Belum Diisi</p>
-                                </div>
-                            </div>
-
-                            <div class="flex gap-4">
-                                <div class="w-6/12">
-                                    <h2 class="text-lg font-semibold mb-2">Nama Lengkap</h2>
-                                    <p>Data Belum Diisi</p>
-                                </div>
-                                <div class="w-6/12">
-                                    <h2 class="text-lg font-semibold mb-2">Tanggal Lahir</h2>
-                                    <p>Data Belum Diisi</p>
+                            <div>
+                                <h2 class="text-lg font-semibold mb-2">No Whatsapp</h2>
+                                <div class="flex gap-4">
+                                    <input id="pakta-integritas" name="pakta-integritas" type="text"
+                                        class="block w-full h-14 px-5 rounded-md border border-gray-300 shadow-sm text-gray-400 focus:text-gray-900 text-base"
+                                        placeholder="example@gmail.com">
+                                    <button type="submit"
+                                        class="h-14 w-28 bg-primary text-white rounded-md flex items-center justify-center hover:bg-opacity-90">
+                                        Edit
+                                    </button>
                                 </div>
                             </div>
-
-                            <div class="flex gap-4">
-                                <div class="w-6/12">
-                                    <h2 class="text-lg font-semibold mb-2">NIK</h2>
-                                    <p>Data Belum Diisi</p>
-                                </div>
-                                <div class="w-6/12">
-                                    <h2 class="text-lg font-semibold mb-2">No Whatsapp</h2>
-                                    <p>Data Belum Diisi</p>
-                                </div>
-                            </div>
-
-                            <div class="flex gap-4">
-                                <div class="w-6/12">
-                                    <h2 class="text-lg font-semibold mb-2">Email</h2>
-                                    <p>Data Belum Diisi</p>
-                                </div>
-                                <div class="w-6/12">
-                                    <h2 class="text-lg font-semibold mb-2">Alamat</h2>
-                                    <p>Data Belum Diisi</p>
+                            <div>
+                                <h2 class="text-lg font-semibold mb-2">Password</h2>
+                                <div class="flex gap-4">
+                                    <input id="pakta-integritas" name="pakta-integritas" type="text"
+                                        class="block w-full h-14 px-5 rounded-md border border-gray-300 shadow-sm text-gray-400 focus:text-gray-900 text-base"
+                                        placeholder="example@gmail.com">
+                                    <button type="submit"
+                                        class="h-14 w-28 bg-primary text-white rounded-md flex items-center justify-center hover:bg-opacity-90">
+                                        Edit
+                                    </button>
                                 </div>
                             </div>
                         </div>
