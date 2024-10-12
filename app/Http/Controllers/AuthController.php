@@ -24,7 +24,7 @@ class AuthController extends Controller
         ]);
 
         if (auth()->attempt(['email' => $input['email'], 'password' => $input['password']])) {
-            return redirect()->route(auth()->user()->role_id == 1 ? 'dashboard.index' : 'jobVacancy.index'); // Redirect ke dashboard admin atau user
+            return redirect()->route(auth()->user()->role_id == 1 ? 'dashboard.index' : 'user.dashboard'); // Redirect ke dashboard admin atau user
         } else {
             return redirect()->route('login')
                 ->withErrors([
