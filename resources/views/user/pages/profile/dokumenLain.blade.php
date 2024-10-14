@@ -11,8 +11,9 @@
 <body class="bg-body">
     {{-- Navbar --}}
     <nav class="py-8 bg-white">
-        <div class="container mx-auto flex items-center justify-between">
-            <a href="#" class="max-w-54"><img src="{{ asset('assets/images/user/logo.svg') }}" alt="Logo">
+        <div class="container mx-auto px-4 flex items-center justify-between">
+            <a href="#" class="max-w-48 lg:max-w-54 xl:max-w-64 2xl:max-w-72"><img
+                    src="{{ asset('assets/images/user/logo.svg') }}" alt="Logo">
             </a>
             <button class="lg:hidden block text-text focus:outline-none" id="navbar-toggler">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -24,7 +25,7 @@
             <div class="hidden lg:flex lg:items-center gap-8">
                 <a href="#" class="text-primary fw-bold py-2 rounded text-lg">Cari Lowongan</a>
                 <div class="lg:flex lg:items-center gap-2">
-                    <a href="#" class="text-white px-4 py-3 bg-primary rounded-md ">Lihat Profil</a>
+                    <a href="/profile" class="text-white px-4 py-3 bg-primary rounded-md ">Lihat Profil</a>
                     <a href="#" class="text-text px-4 py-3 border border-primary rounded-md"><img
                             src="{{ asset('assets/images/user/user.svg') }}" alt="user" class="w-full"></a>
                 </div>
@@ -32,15 +33,15 @@
         </div>
     </nav>
 
-    <section class="container mx-auto mt-10">
-        <div class="mt-4 flex gap-4 items-start">
-            <div class="w-2/5  grid gap-4">
+    <section class="container mx-auto px-4 mt-10">
+        <div class="mt-4 flex flex-col md:flex-row gap-4 items-start">
+            <div class="w-full md:w-2/5 grid gap-4">
                 <div class="grid gap-2 bg-white px-5 py-6 rounded-lg border">
                     <div class="flex gap-4 items-center">
                         <img src="{{ asset('assets/images/user/Frame 77.svg') }}" alt="Bag">
-                        <div class=""> <!-- Tambahkan space-y-1 -->
+                        <div class="space-y-1">
                             <h1 class="font-bold text-2xl">Your Name</h1>
-                            <p class="">example@gmail.com</p>
+                            <p>example@gmail.com</p>
                         </div>
                     </div>
                 </div>
@@ -75,8 +76,7 @@
                 </div>
             </div>
 
-
-            <div class="w-3/5 flex flex-col gap-4">
+            <div class="w-full lg:w-3/5 flex flex-col gap-4">
                 <div class="bg-white px-8 py-8 rounded-lg border">
                     <h2 class="text-3xl font-semibold mb-3">Upload CV Mu Disini</h2>
                     <form class="flex gap-4">
@@ -94,227 +94,248 @@
                         </div>
                     </form>
                 </div>
+
                 <div class="bg-white px-8 py-10 rounded-lg border">
-                    <!-- Tab Headers -->
                     <div class="flex gap-8 border-b border-gray-300 pb-3">
                         <label class="cursor-pointer pb-2 text-lg">
                             Data Pribadi
                         </label>
-
                         <label class="cursor-pointer text-primary pb-2 font-bold text-lg">
                             Dokumen Lainnya
                         </label>
                     </div>
-                    <form class="grid gap-6">
-                        <div class="flex gap-3 items-start pt-1 pb-2 border-b-2 border-gray-200">
-                            <div>
-                                <p class="text-lg font-semibold mt-4 mb-1 text-text">Kelengkapan Dokumen</p>
-                                <p class="text-text text-lg">Lengkapi dokumen untuk mempermudah proses pendaftaran
-                                    magang.</p>
-                            </div>
-                        </div>
 
-                        <!-- Daftar dokumen -->
+                    <form class="grid gap-6 mt-6">
                         <div class="flex flex-col gap-6">
-                            <!-- Dokumen Item -->
                             <div>
-                                <h2 class="text-lg font-semibold mb-2">Pakta Integritas</h2>
+                                <h2 class="text-lg font-semibold mb-2">Kelengkapan Dokumen</h2>
+                                <p>Lengkapi dokumen untuk mempermudah proses pendaftaraan magang.</p>
+                            </div>
+                            <div class="grid md:grid-cols-1 gap-2">
+                                <h2 class="text-lg font-semibold">Pakta Integritas</h2>
                                 <div class="flex gap-4">
-                                    <input id="pakta-integritas" name="pakta-integritas" type="text"
-                                        class="block w-full h-14 px-5 rounded-md border border-gray-300 shadow-sm text-gray-400 focus:text-gray-900 text-base"
-                                        placeholder="Upload Disini">
-                                    <button type="submit"
-                                        class="h-14 w-14 bg-primary text-white rounded-md flex items-center justify-center hover:bg-opacity-90">
-                                        <img src="{{ asset('assets/images/user/Arrow - Bottom.svg') }}" alt="Upload"
-                                            class="w-7 h-7">
-                                    </button>
+                                    <form class="flex gap-4">
+                                        <div class="flex-grow">
+                                            <input id="posisi" name="posisi" type="text"
+                                                class="block w-full h-14 px-5 rounded-md border border-gray-300 shadow-sm text-gray-400 focus:text-gray-900 sm:text-sm"
+                                                placeholder="Upload Disini">
+                                        </div>
+                                        <div class="w-auto">
+                                            <button type="submit"
+                                                class="h-14 w-14 bg-primary text-white rounded-md flex items-center justify-center hover:bg-opacity-90">
+                                                <img src="{{ asset('assets/images/user/Arrow - Bottom.svg') }}"
+                                                    alt="Search" class="w-7 h-7">
+                                            </button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
-
-                            <!-- Dokumen lainnya -->
-                            <div>
-                                <h2 class="text-lg font-semibold mb-2">Portfolio</h2>
+                            <div class="grid md:grid-cols-1 gap-4">
+                                <h2 class="text-lg font-semibold">Portfolio</h2>
                                 <div class="flex gap-4">
-                                    <input id="portfolio" name="portfolio" type="text"
-                                        class="block w-full h-14 px-5 rounded-md border border-gray-300 shadow-sm text-gray-400 focus:text-gray-900 text-base"
-                                        placeholder="Upload Disini">
-                                    <button type="submit"
-                                        class="h-14 w-14 bg-primary text-white rounded-md flex items-center justify-center hover:bg-opacity-90">
-                                        <img src="{{ asset('assets/images/user/Arrow - Bottom.svg') }}" alt="Upload"
-                                            class="w-7 h-7">
-                                    </button>
+                                    <div class="flex-grow">
+                                        <input id="portfolio" name="portfolio" type="text"
+                                            class="block w-full h-14 px-5 rounded-md border border-gray-300 shadow-sm text-gray-400 focus:text-gray-900 sm:text-sm"
+                                            placeholder="Upload Disini">
+                                    </div>
+                                    <div class="w-auto">
+                                        <button type="submit"
+                                            class="h-14 w-14 bg-primary text-white rounded-md flex items-center justify-center hover:bg-opacity-90">
+                                            <img src="{{ asset('assets/images/user/Arrow - Bottom.svg') }}"
+                                                alt="Upload" class="w-7 h-7">
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-
-                            <div>
-                                <h2 class="text-lg font-semibold mb-2">Ijazah/Surat Keterangan Lulus (bagi Fresh
+                            <div class="grid md:grid-cols-1 gap-4">
+                                <h2 class="text-lg font-semibold">Ijazah/Surat Keterangan Lulus (bagi Fresh
                                     Graduate)</h2>
                                 <div class="flex gap-4">
-                                    <input id="ijazah" name="ijazah" type="text"
-                                        class="block w-full h-14 px-5 rounded-md border border-gray-300 shadow-sm text-gray-400 focus:text-gray-900 text-base"
-                                        placeholder="Upload Disini">
-                                    <button type="submit"
-                                        class="h-14 w-14 bg-primary text-white rounded-md flex items-center justify-center hover:bg-opacity-90">
-                                        <img src="{{ asset('assets/images/user/Arrow - Bottom.svg') }}"
-                                            alt="Upload" class="w-7 h-7">
-                                    </button>
+                                    <div class="flex-grow">
+                                        <input id="ijazah" name="ijazah" type="text"
+                                            class="block w-full h-14 px-5 rounded-md border border-gray-300 shadow-sm text-gray-400 focus:text-gray-900 sm:text-sm"
+                                            placeholder="Upload Disini">
+                                    </div>
+                                    <div class="w-auto">
+                                        <button type="submit"
+                                            class="h-14 w-14 bg-primary text-white rounded-md flex items-center justify-center hover:bg-opacity-90">
+                                            <img src="{{ asset('assets/images/user/Arrow - Bottom.svg') }}"
+                                                alt="Upload" class="w-7 h-7">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid md:grid-cols-1 gap-4">
+                                <h2 class="text-lg font-semibold">KTP</h2>
+                                <div class="flex gap-4">
+                                    <div class="flex-grow">
+                                        <input id="ktp" name="ktp" type="text"
+                                            class="block w-full h-14 px-5 rounded-md border border-gray-300 shadow-sm text-gray-400 focus:text-gray-900 sm:text-sm"
+                                            placeholder="Upload Disini">
+                                    </div>
+                                    <div class="w-auto">
+                                        <button type="submit"
+                                            class="h-14 w-14 bg-primary text-white rounded-md flex items-center justify-center hover:bg-opacity-90">
+                                            <img src="{{ asset('assets/images/user/Arrow - Bottom.svg') }}"
+                                                alt="Upload" class="w-7 h-7">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid md:grid-cols-1 gap-4">
+                                <h2 class="text-lg font-semibold">Surat Rekomendasi dari Universitas</h2>
+                                <div class="flex gap-4">
+                                    <div class="flex-grow">
+                                        <input id="surat-rekomendasi" name="surat_rekomendasi" type="text"
+                                            class="block w-full h-14 px-5 rounded-md border border-gray-300 shadow-sm text-gray-400 focus:text-gray-900 sm:text-sm"
+                                            placeholder="Upload Disini">
+                                    </div>
+                                    <div class="w-auto">
+                                        <button type="submit"
+                                            class="h-14 w-14 bg-primary text-white rounded-md flex items-center justify-center hover:bg-opacity-90">
+                                            <img src="{{ asset('assets/images/user/Arrow - Bottom.svg') }}"
+                                                alt="Upload" class="w-7 h-7">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid md:grid-cols-1 gap-4">
+                                <h2 class="text-lg font-semibold">Rapor</h2>
+                                <div class="flex gap-4">
+                                    <div class="flex-grow">
+                                        <input id="rapor" name="rapor" type="text"
+                                            class="block w-full h-14 px-5 rounded-md border border-gray-300 shadow-sm text-gray-400 focus:text-gray-900 sm:text-sm"
+                                            placeholder="Upload Disini">
+                                    </div>
+                                    <div class="w-auto">
+                                        <button type="submit"
+                                            class="h-14 w-14 bg-primary text-white rounded-md flex items-center justify-center hover:bg-opacity-90">
+                                            <img src="{{ asset('assets/images/user/Arrow - Bottom.svg') }}"
+                                                alt="Upload" class="w-7 h-7">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid md:grid-cols-1 gap-4">
+                                <h2 class="text-lg font-semibold">Sertifikat</h2>
+                                <div class="flex gap-4">
+                                    <div class="flex-grow">
+                                        <input id="sertifikat" name="sertifikat" type="text"
+                                            class="block w-full h-14 px-5 rounded-md border border-gray-300 shadow-sm text-gray-400 focus:text-gray-900 sm:text-sm"
+                                            placeholder="Upload Disini">
+                                    </div>
+                                    <div class="w-auto">
+                                        <button type="submit"
+                                            class="h-14 w-14 bg-primary text-white rounded-md flex items-center justify-center hover:bg-opacity-90">
+                                            <img src="{{ asset('assets/images/user/Arrow - Bottom.svg') }}"
+                                                alt="Upload" class="w-7 h-7">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid md:grid-cols-1 gap-4">
+                                <h2 class="text-lg font-semibold">Transkrip</h2>
+                                <div class="flex gap-4">
+                                    <div class="flex-grow">
+                                        <input id="transkrip" name="transkrip" type="text"
+                                            class="block w-full h-14 px-5 rounded-md border border-gray-300 shadow-sm text-gray-400 focus:text-gray-900 sm:text-sm"
+                                            placeholder="Upload Disini">
+                                    </div>
+                                    <div class="w-auto">
+                                        <button type="submit"
+                                            class="h-14 w-14 bg-primary text-white rounded-md flex items-center justify-center hover:bg-opacity-90">
+                                            <img src="{{ asset('assets/images/user/Arrow - Bottom.svg') }}"
+                                                alt="Upload" class="w-7 h-7">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid md:grid-cols-1 gap-4">
+                                <h2 class="text-lg font-semibold">KTM</h2>
+                                <div class="flex gap-4">
+                                    <div class="flex-grow">
+                                        <input id="ktm" name="ktm" type="text"
+                                            class="block w-full h-14 px-5 rounded-md border border-gray-300 shadow-sm text-gray-400 focus:text-gray-900 sm:text-sm "placeholder="Upload Disini">
+                                    </div>
+                                    <div class="w-auto">
+                                        <button type="submit"
+                                            class="h-14 w-14 bg-primary text-white rounded-md flex items-center justify-center hover:bg-opacity-90">
+                                            <img src="{{ asset('assets/images/user/Arrow - Bottom.svg') }}"
+                                                alt="Upload" class="w-7 h-7">
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div>
-                                <h2 class="text-lg font-semibold mb-2">KTP</h2>
+                            <!-- Input Dokumen Lainnya -->
+                            <div class="grid md:grid-cols-1 gap-4">
+                                <h2 class="text-lg font-semibold">Dokumen Lainnya</h2>
                                 <div class="flex gap-4">
-                                    <input id="ktp" name="ktp" type="text"
-                                        class="block w-full h-14 px-5 rounded-md border border-gray-300 shadow-sm text-gray-400 focus:text-gray-900 text-base"
-                                        placeholder="Upload Disini">
-                                    <button type="submit"
-                                        class="h-14 w-14 bg-primary text-white rounded-md flex items-center justify-center hover:bg-opacity-90">
-                                        <img src="{{ asset('assets/images/user/Arrow - Bottom.svg') }}"
-                                            alt="Upload" class="w-7 h-7">
-                                    </button>
+                                    <div class="flex-grow">
+                                        <input id="dokumen-lain" name="dokumen-lain" type="text"
+                                            class="block w-full h-14 px-5 rounded-md border border-gray-300 shadow-sm text-gray-400 focus:text-gray-900 sm:text-sm"placeholder="Upload Disini">
+                                    </div>
+                                    <div class="w-auto">
+                                        <button type="submit"
+                                            class="h-14 w-14 bg-primary text-white rounded-md flex items-center justify-center hover:bg-opacity-90">
+                                            <img src="{{ asset('assets/images/user/Arrow - Bottom.svg') }}"
+                                                alt="Upload" class="w-7 h-7">
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-
-                            <div>
-                                <h2 class="text-lg font-semibold mb-2">Surat Rekomendasi dari Universitas</h2>
-                                <div class="flex gap-4">
-                                    <input id="surat-rekomendasi" name="surat-rekomendasi" type="text"
-                                        class="block w-full h-14 px-5 rounded-md border border-gray-300 shadow-sm text-gray-400 focus:text-gray-900 text-base"
-                                        placeholder="Upload Disini">
-                                    <button type="submit"
-                                        class="h-14 w-14 bg-primary text-white rounded-md flex items-center justify-center hover:bg-opacity-90">
-                                        <img src="{{ asset('assets/images/user/Arrow - Bottom.svg') }}"
-                                            alt="Upload" class="w-7 h-7">
-                                    </button>
-                                </div>
+                            <div class="flex justify-end mt-3">
+                                <button type="submit"
+                                    class="bg-primary text-white px-4 py-3 rounded-lg hover:bg-opacity-90 w-full">Simpan</button>
                             </div>
-
-                            <div>
-                                <h2 class="text-lg font-semibold mb-2">Rapor (bagi SMA/SMK)</h2>
-                                <div class="flex gap-4">
-                                    <input id="rapor" name="rapor" type="text"
-                                        class="block w-full h-14 px-5 rounded-md border border-gray-300 shadow-sm text-gray-400 focus:text-gray-900 text-base"
-                                        placeholder="Upload Disini">
-                                    <button type="submit"
-                                        class="h-14 w-14 bg-primary text-white rounded-md flex items-center justify-center hover:bg-opacity-90">
-                                        <img src="{{ asset('assets/images/user/Arrow - Bottom.svg') }}"
-                                            alt="Upload" class="w-7 h-7">
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div>
-                                <h2 class="text-lg font-semibold mb-2">Sertifikat</h2>
-                                <div class="flex gap-4">
-                                    <input id="sertifikat" name="sertifikat" type="text"
-                                        class="block w-full h-14 px-5 rounded-md border border-gray-300 shadow-sm text-gray-400 focus:text-gray-900 text-base"
-                                        placeholder="Upload Disini">
-                                    <button type="submit"
-                                        class="h-14 w-14 bg-primary text-white rounded-md flex items-center justify-center hover:bg-opacity-90">
-                                        <img src="{{ asset('assets/images/user/Arrow - Bottom.svg') }}"
-                                            alt="Upload" class="w-7 h-7">
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div>
-                                <h2 class="text-lg font-semibold mb-2">Transkrip Nilai</h2>
-                                <div class="flex gap-4">
-                                    <input id="transkrip-nilai" name="transkrip-nilai" type="text"
-                                        class="block w-full h-14 px-5 rounded-md border border-gray-300 shadow-sm text-gray-400 focus:text-gray-900 text-base"
-                                        placeholder="Upload Disini">
-                                    <button type="submit"
-                                        class="h-14 w-14 bg-primary text-white rounded-md flex items-center justify-center hover:bg-opacity-90">
-                                        <img src="{{ asset('assets/images/user/Arrow - Bottom.svg') }}"
-                                            alt="Upload" class="w-7 h-7">
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div>
-                                <h2 class="text-lg font-semibold mb-2">KTM</h2>
-                                <div class="flex gap-4">
-                                    <input id="ktm" name="ktm" type="text"
-                                        class="block w-full h-14 px-5 rounded-md border border-gray-300 shadow-sm text-gray-400 focus:text-gray-900 text-base"
-                                        placeholder="Upload Disini">
-                                    <button type="submit"
-                                        class="h-14 w-14 bg-primary text-white rounded-md flex items-center justify-center hover:bg-opacity-90">
-                                        <img src="{{ asset('assets/images/user/Arrow - Bottom.svg') }}"
-                                            alt="Upload" class="w-7 h-7">
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div>
-                                <h2 class="text-lg font-semibold mb-2">Dokumen Lainnya</h2>
-                                <div class="flex gap-4">
-                                    <input id="dokumen-lainnya" name="dokumen-lainnya" type="text"
-                                        class="block w-full h-14 px-5 rounded-md border border-gray-300 shadow-sm text-gray-400 focus:text-gray-900 text-base"
-                                        placeholder="Upload Disini">
-                                    <button type="submit"
-                                        class="h-14 w-14 bg-primary text-white rounded-md flex items-center justify-center hover:bg-opacity-90">
-                                        <img src="{{ asset('assets/images/user/Arrow - Bottom.svg') }}"
-                                            alt="Upload" class="w-7 h-7">
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Tombol Simpan -->
-                        <div>
-                            <button type="submit"
-                                class="h-14 w-full bg-primary text-white rounded-md hover:bg-opacity-90">
-                                Simpan
-                            </button>
                         </div>
                     </form>
-
                 </div>
             </div>
-        </div>
     </section>
 
+
     <footer class="bg-red-600 text-white pt-12 mt-20">
-        <h2 class="container mx-auto font-bold text-4xl mb-8 ">Magang Telkomsel</h2>
-        <div class="container mx-auto flex gap-20 justify-between mb-10">
-            <div class="w-6/12">
-                <p class="mb-4 leading-relaxed">PT FHCI Prima Unggul<br>Plaza Mandiri Lt.28, Jl. Jend. Gatot Subroto
-                    Kav.
-                    36-38.
-                    Jakarta 12190</p>
-                <p>Email: hi@magentaku.id</p>
-                <div class="flex py-4 gap-2">
-                    <img src="{{ asset('assets/images/user/ri_instagram-fill.svg') }}" alt="Bag">
-                    <img src="{{ asset('assets/images/user/mdi_linkedin.svg') }}" alt="Bag">
-                    <img src="{{ asset('assets/images/user/prime_twitter.svg') }}" alt="Bag">
-                    <img src="{{ asset('assets/images/user/mdi_youtube.svg') }}" alt="Bag">
-                    <img src="{{ asset('assets/images/user/mdi_facebook.svg') }}" alt="Bag">
+        <div class="container mx-auto px-4">
+            <h2 class="font-bold text-4xl mb-8 text-left">Magang Telkomsel</h2>
+            <div class="flex flex-col md:flex-row gap-10 justify-start mb-10">
+                <div class="w-full md:w-6/12">
+                    <p class="mb-4 leading-relaxed">
+                        PT FHCI Prima Unggul<br>
+                        Plaza Mandiri Lt.28, Jl. Jend. Gatot Subroto Kav. 36-38, Jakarta 12190
+                    </p>
+                    <p>Email: <a href="mailto:hi@magentaku.id" class="underline">hi@magentaku.id</a></p>
+                    <div class="flex py-4 gap-2">
+                        <img src="{{ asset('assets/images/user/ri_instagram-fill.svg') }}" alt="Instagram"
+                            class="w-6 h-6">
+                        <img src="{{ asset('assets/images/user/mdi_linkedin.svg') }}" alt="LinkedIn"
+                            class="w-6 h-6">
+                        <img src="{{ asset('assets/images/user/prime_twitter.svg') }}" alt="Twitter"
+                            class="w-6 h-6">
+                        <img src="{{ asset('assets/images/user/mdi_youtube.svg') }}" alt="YouTube" class="w-6 h-6">
+                        <img src="{{ asset('assets/images/user/mdi_facebook.svg') }}" alt="Facebook"
+                            class="w-6 h-6">
+                    </div>
+                </div>
+
+                <div class="w-full md:w-3/12">
+                    <h2 class="font-bold text-lg mb-3">Peserta</h2>
+                    <p><a href="#" class="hover:underline">Cari Lowongan</a></p>
+                </div>
+
+                <div class="w-full md:w-3/12">
+                    <h2 class="font-bold text-lg mb-4">Pusat Informasi</h2>
+                    <p class="mb-4"><a href="#" class="hover:underline">Panduan</a></p>
+                    <p class="mb-4">Email: <a href="mailto:hi@magentaku.id" class="underline">hi@magentaku.id</a>
+                    </p>
+                    <p><a href="#" class="hover:underline">Tentang Kami</a></p>
                 </div>
             </div>
 
-            <div class="w-3/12">
-                <h2 class="font-bold text-lg mb-3">Peserta</h2>
-                <p><a href="#" class="hover:underline">Cari Lowongan</a></p>
+            <div class="border-t border-gray-400 py-8 text-right">
+                <p>© 2024 MAGENTA BUMN. All rights reserved</p>
             </div>
-
-            <div class="w-3/12">
-                <h2 class="font-bold text-lg mb-4">Pusat Informasi</h2>
-                <p class="mb-4"><a href="#" class="hover:underline">Panduan</a></p>
-                <p class="mb-4">Email: <a href="mailto:hi@magentaku.id" class="underline ">hi@magentaku.id</a></p>
-                <p class=""><a href="#" class="hover:underline">Tentang Kami</a></p>
-            </div>
-        </div>
-
-        <div class="container mx-auto border-t border-gray-400 py-8 text-center">
-            <p>© 2024 MAGENTA BUMN. All rights reserved</p>
         </div>
     </footer>
-
-    {{-- <div class="d-grid mt-3">
-        <form action="{{ route('logout') }}" method="POST">
-            @csrf
-            <button type="submit" class="btn btn-danger">Logout</button>
-        </form>
-    </div> --}}
 </body>
 
 </html>
