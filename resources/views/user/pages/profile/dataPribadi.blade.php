@@ -11,8 +11,9 @@
 <body class="bg-body">
     {{-- Navbar --}}
     <nav class="py-8 bg-white">
-        <div class="container mx-auto flex items-center justify-between">
-            <a href="#" class="max-w-54"><img src="{{ asset('assets/images/user/logo.svg') }}" alt="Logo">
+        <div class="container mx-auto px-4 flex items-center justify-between">
+            <a href="#" class="max-w-48 lg:max-w-54 xl:max-w-64 2xl:max-w-72"><img
+                    src="{{ asset('assets/images/user/logo.svg') }}" alt="Logo">
             </a>
             <button class="lg:hidden block text-text focus:outline-none" id="navbar-toggler">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -24,7 +25,7 @@
             <div class="hidden lg:flex lg:items-center gap-8">
                 <a href="#" class="text-primary fw-bold py-2 rounded text-lg">Cari Lowongan</a>
                 <div class="lg:flex lg:items-center gap-2">
-                    <a href="#" class="text-white px-4 py-3 bg-primary rounded-md ">Lihat Profil</a>
+                    <a href="/profile" class="text-white px-4 py-3 bg-primary rounded-md ">Lihat Profil</a>
                     <a href="#" class="text-text px-4 py-3 border border-primary rounded-md"><img
                             src="{{ asset('assets/images/user/user.svg') }}" alt="user" class="w-full"></a>
                 </div>
@@ -32,9 +33,9 @@
         </div>
     </nav>
 
-    <section class="container mx-auto mt-10">
-        <div class="mt-4 flex gap-4 items-start">
-            <div class="w-2/5  grid gap-4">
+    <section class="container mx-auto px-4 mt-10">
+        <div class="mt-4 flex flex-col lg:flex-row gap-4 items-start">
+            <div class="w-full lg:w-2/5 grid gap-4">
                 <div class="grid gap-2 bg-white px-5 py-6 rounded-lg border">
                     <div class="flex gap-4 items-center">
                         <img src="{{ asset('assets/images/user/Frame 77.svg') }}" alt="Bag">
@@ -76,7 +77,7 @@
             </div>
 
 
-            <div class="w-3/5 flex flex-col gap-4">
+            <div class="w-full lg:w-3/5 flex flex-col gap-4">
                 <div class="bg-white px-8 py-8 rounded-lg border">
                     <h2 class="text-3xl font-semibold mb-3">Upload CV Mu Disini</h2>
                     <form class="flex gap-4">
@@ -301,48 +302,50 @@
         </div>
     </section>
 
+
     <footer class="bg-red-600 text-white pt-12 mt-20">
-        <h2 class="container mx-auto font-bold text-4xl mb-8 ">Magang Telkomsel</h2>
-        <div class="container mx-auto flex gap-20 justify-between mb-10">
-            <div class="w-6/12">
-                <p class="mb-4 leading-relaxed">PT FHCI Prima Unggul<br>Plaza Mandiri Lt.28, Jl. Jend. Gatot Subroto
-                    Kav.
-                    36-38.
-                    Jakarta 12190</p>
-                <p>Email: hi@magentaku.id</p>
-                <div class="flex py-4 gap-2">
-                    <img src="{{ asset('assets/images/user/ri_instagram-fill.svg') }}" alt="Bag">
-                    <img src="{{ asset('assets/images/user/mdi_linkedin.svg') }}" alt="Bag">
-                    <img src="{{ asset('assets/images/user/prime_twitter.svg') }}" alt="Bag">
-                    <img src="{{ asset('assets/images/user/mdi_youtube.svg') }}" alt="Bag">
-                    <img src="{{ asset('assets/images/user/mdi_facebook.svg') }}" alt="Bag">
+        <div class="container mx-auto px-4">
+            <h2 class="font-bold text-4xl mb-8 text-left">Magang Telkomsel</h2>
+            <div class="flex flex-col md:flex-row gap-10 justify-start mb-10">
+                <div class="w-full md:w-6/12">
+                    <p class="mb-4 leading-relaxed">
+                        PT FHCI Prima Unggul<br>
+                        Plaza Mandiri Lt.28, Jl. Jend. Gatot Subroto Kav. 36-38, Jakarta 12190
+                    </p>
+                    <p>Email: <a href="mailto:hi@magentaku.id" class="underline">hi@magentaku.id</a></p>
+                    <div class="flex py-4 gap-2">
+                        <img src="{{ asset('assets/images/user/ri_instagram-fill.svg') }}" alt="Instagram"
+                            class="w-6 h-6">
+                        <img src="{{ asset('assets/images/user/mdi_linkedin.svg') }}" alt="LinkedIn"
+                            class="w-6 h-6">
+                        <img src="{{ asset('assets/images/user/prime_twitter.svg') }}" alt="Twitter"
+                            class="w-6 h-6">
+                        <img src="{{ asset('assets/images/user/mdi_youtube.svg') }}" alt="YouTube" class="w-6 h-6">
+                        <img src="{{ asset('assets/images/user/mdi_facebook.svg') }}" alt="Facebook"
+                            class="w-6 h-6">
+                    </div>
+                </div>
+
+                <div class="w-full md:w-3/12">
+                    <h2 class="font-bold text-lg mb-3">Peserta</h2>
+                    <p><a href="#" class="hover:underline">Cari Lowongan</a></p>
+                </div>
+
+                <div class="w-full md:w-3/12">
+                    <h2 class="font-bold text-lg mb-4">Pusat Informasi</h2>
+                    <p class="mb-4"><a href="#" class="hover:underline">Panduan</a></p>
+                    <p class="mb-4">Email: <a href="mailto:hi@magentaku.id" class="underline">hi@magentaku.id</a>
+                    </p>
+                    <p><a href="#" class="hover:underline">Tentang Kami</a></p>
                 </div>
             </div>
 
-            <div class="w-3/12">
-                <h2 class="font-bold text-lg mb-3">Peserta</h2>
-                <p><a href="#" class="hover:underline">Cari Lowongan</a></p>
+            <div class="border-t border-gray-400 py-8 text-right">
+                <p>© 2024 MAGENTA BUMN. All rights reserved</p>
             </div>
-
-            <div class="w-3/12">
-                <h2 class="font-bold text-lg mb-4">Pusat Informasi</h2>
-                <p class="mb-4"><a href="#" class="hover:underline">Panduan</a></p>
-                <p class="mb-4">Email: <a href="mailto:hi@magentaku.id" class="underline ">hi@magentaku.id</a></p>
-                <p class=""><a href="#" class="hover:underline">Tentang Kami</a></p>
-            </div>
-        </div>
-
-        <div class="container mx-auto border-t border-gray-400 py-8 text-center">
-            <p>© 2024 MAGENTA BUMN. All rights reserved</p>
         </div>
     </footer>
 
-    {{-- <div class="d-grid mt-3">
-        <form action="{{ route('logout') }}" method="POST">
-            @csrf
-            <button type="submit" class="btn btn-danger">Logout</button>
-        </form>
-    </div> --}}
 </body>
 
 </html>
