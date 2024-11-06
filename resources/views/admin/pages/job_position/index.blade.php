@@ -17,6 +17,8 @@
                     <th>closing date</th>
                     <th>announcement date</th>
                     <th>quota</th>
+                    <th>duration</th>
+                    <th>education</th>
                     <th>status</th>
                     <th>aksi</th>
                 </tr>
@@ -29,6 +31,8 @@
                     <td>{{$job->closing_date}}</td>
                     <td>{{$job->announcement_date}}</td>
                     <td>{{$job->quota}}</td>
+                    <td>{{$job->duration}}</td>
+                    <td>{{$job->education}}</td>
                     <td>{{$job->status}}</td>
                     <td class="d-flex">
                         <a href="{{ route('job-position.edit', $job->id) }}" class="btn btn-warning btn-sm ">
@@ -57,6 +61,8 @@
                     <th>closing date</th>
                     <th>announcement date</th>
                     <th>quota</th>
+                    <th>duration</th>
+                    <th>education</th>
                     <th>status</th>
                     <th>aksi</th>
                 </tr>

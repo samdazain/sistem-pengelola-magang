@@ -37,6 +37,8 @@ class JobPositionController extends Controller
         'closing_date' => 'required|date',
         'announcement_date' => 'required|date',
         'description' => 'required|string',
+        'duration' => 'required|string',
+        'education' => 'required|string',
         'requirements' => 'required|string',
         'quota' => 'required|string'
     ]);
@@ -49,6 +51,8 @@ class JobPositionController extends Controller
     $jobPosition->closing_date = $validatedData['closing_date'];
     $jobPosition->announcement_date = $validatedData['announcement_date'];
     $jobPosition->requirements = $validatedData['requirements'];
+    $jobPosition->duration = $validatedData['duration'];
+    $jobPosition->education = $validatedData['education'];
     $jobPosition->status = $validatedData['status'];
     $jobPosition->quota = $validatedData['quota'];
 
@@ -88,6 +92,8 @@ class JobPositionController extends Controller
             'closing_date' => 'required|date',
             'announcement_date' => 'required|date',
             'description' => 'required|string',
+            'duration' => 'required|string',
+            'education' => 'required|string',
             'requirements' => 'required|string',
             'quota' => 'required|string'
         ]);
@@ -99,6 +105,8 @@ class JobPositionController extends Controller
         $jobPosition->closing_date = $validatedData['closing_date'];
         $jobPosition->announcement_date = $validatedData['announcement_date'];
         $jobPosition->requirements = $validatedData['requirements'];
+        $jobPosition->duration = $validatedData['duration'];
+        $jobPosition->education = $validatedData['education'];
         $jobPosition->status = $validatedData['status'];
         $jobPosition->quota = $validatedData['quota'];
 

@@ -31,6 +31,8 @@ Route::middleware(['auth'])->group(function () {
     Route::middleware('user-access:0')->group(function () {
         Route::get('/job-vacancy', [JobVacancyController::class, 'index'])->name('user.dashboard');
         Route::get('/profile', [ProfileController::class, 'index'])->name('user.profile');
+        Route::get('/get-profile', [ProfileController::class, 'getProfile']);
+        Route::get('/job-vacancy/{id}', [JobVacancyController::class, 'show'])->name('job.detail');
     });
 
     Route::middleware('user-access:1')->group(function () {

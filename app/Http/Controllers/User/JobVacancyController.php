@@ -3,63 +3,38 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\JobPosition;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
-    class JobVacancyController extends Controller
+class JobVacancyController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('user.pages.job_vacancy.index');
+        $job = JobPosition::where('status', 'public')
+            ->orderBy('created_at', 'desc')
+            ->get()
+            ->map(function ($job) {
+                $job->formatted_closing_date = Carbon::parse($job->closing_date)->translatedFormat('d F Y');
+                return $job;
+            });
+
+        return view('user.pages.job_vacancy.index', compact('job'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
-        //
-    }
+        $job = JobPosition::find($id);
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        if ($job) {
+            $job->formatted_closing_date = Carbon::parse($job->closing_date)->translatedFormat('d F Y');
+            $job->formatted_announcement_date = Carbon::parse($job->announcement_date)->translatedFormat('d F Y');
+        }
+        return view('user.pages.job_vacancy.detail', compact('job'));
     }
 }

@@ -40,6 +40,14 @@
                     <label for="announcement_date" class="form-label">Pengumuman</label>
                     <input type="date" class="form-control" required name="announcement_date" id="announcement_date">
                 </div>
+                <div class="col-4 mb-3">
+                    <label for="closing_date" class="form-label">durasi (bulan)</label>
+                    <input type="text" class="form-control" required name="duration" >
+                </div>
+                <div class="col-4 mb-3">
+                    <label for="announcement_date" class="form-label">Pendidikan</label>
+                    <input type="text" class="form-control" required name="education" >
+                </div>
                 <div class="col-6">
                     <label for="editor1">Deskripsi</label>
                     <textarea id="editor1" rows="10" cols="80" required name="description"></textarea>
