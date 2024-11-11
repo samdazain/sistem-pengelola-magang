@@ -22,7 +22,7 @@ class ProfileController extends Controller
 
         return response()->json([
             'status' => 'success',
-            'data' => $profile
+            'data' => $profile,
         ], 200);
     }
 

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Admin;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -16,6 +15,7 @@ class AdminController extends Controller
     public function index()
     {
         $admins = User::where('role_id', 1)->whereNull('deleted_at')->orderBy('created_at', 'desc')->get();
+
         return view('admin.pages.admin.index', compact('admins'));
     }
 
@@ -33,7 +33,7 @@ class AdminController extends Controller
     public function store(Request $request)
     {
 
-        $admin = new User();
+        $admin = new User;
         $admin->username = $request->username;
         $admin->email = $request->email;
         $admin->password = Hash::make($request->password);
@@ -50,6 +50,7 @@ class AdminController extends Controller
     public function show(string $id)
     {
         $admin = user::where('id', $id)->first();
+
         return view('admin.pages.admin.show', compact('admin'));
     }
 
@@ -59,6 +60,7 @@ class AdminController extends Controller
     public function edit($id)
     {
         $admin = user::where('id', $id)->first();
+
         return view('admin.pages.admin.edit', compact('admin'));
     }
 
@@ -90,6 +92,7 @@ class AdminController extends Controller
     {
         $admin = User::find($id);
         $admin->delete();
+
         return redirect()->route('admin.index')->with('success', 'Akun admin berhasil dihapus');
     }
 }

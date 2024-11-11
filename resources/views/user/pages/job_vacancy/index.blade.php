@@ -97,13 +97,14 @@
                         <div class="flex gap-4 mb-3 flex-wrap">
 
                             <div class="border border-gray-400 bg-gray-200 rounded-md">
-                                <p class="text-text px-4 py-2">{{$j->duration}}</p>
+                                <p class="text-text px-4 py-2">{{$j->duration}} bulan</p>
                             </div>
                             <div class="border border-gray-400 bg-gray-200 rounded-md">
                                 <p class="text-text px-4 py-2">{{$j->location}}</p>
                             </div>
                         </div>
-                        <p class="text-text border-t pt-3">Penutupan: <span class="text-primary">{{$j -> formatted_closing_date }}</span></p>
+                        <p class="text-text border-t pt-3">Penutupan: <span
+                                class="text-primary">{{$j -> formatted_closing_date }}</span></p>
                     </div>
                 </a>
 
@@ -112,7 +113,7 @@
         </div>
 
 
-        <!-- Pagination di sini -->
+        <!-- Pagination Section-->
         <div class="flex flex-wrap gap-4 mt-4 justify-center">
             <p class="w-12 h-12 flex items-center justify-center font-extrabold bg-primary text-white rounded-full">1
             </p>
@@ -126,8 +127,11 @@
             <p class="w-12 h-12 flex items-center justify-center font-extrabold bg-white text-text rounded-full">
                 &gt;&gt;</p>
         </div>
+        <!-- Pagination Section-->
+
     </section>
 
+    <!-- Footer Section -->
     <footer class="bg-red-600 text-white pt-12 mt-20">
         <div class="container mx-auto px-4">
             <h2 class="font-bold text-4xl mb-8 text-left">Magang Telkomsel</h2>
@@ -142,11 +146,9 @@
                         <img src="{{ asset('assets/images/user/ri_instagram-fill.svg') }}" alt="Instagram"
                             class="w-6 h-6">
                         <img src="{{ asset('assets/images/user/mdi_linkedin.svg') }}" alt="LinkedIn" class="w-6 h-6">
-                        <img src="{{ asset('assets/images/user/prime_twitter.svg') }}" alt="Twitter"
-                            class="w-6 h-6">
+                        <img src="{{ asset('assets/images/user/prime_twitter.svg') }}" alt="Twitter" class="w-6 h-6">
                         <img src="{{ asset('assets/images/user/mdi_youtube.svg') }}" alt="YouTube" class="w-6 h-6">
-                        <img src="{{ asset('assets/images/user/mdi_facebook.svg') }}" alt="Facebook"
-                            class="w-6 h-6">
+                        <img src="{{ asset('assets/images/user/mdi_facebook.svg') }}" alt="Facebook" class="w-6 h-6">
                     </div>
                 </div>
 
@@ -169,6 +171,7 @@
             </div>
         </div>
     </footer>
+    <!-- Footer Section -->
 </body>
 
 </html>

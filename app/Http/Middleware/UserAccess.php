@@ -16,7 +16,7 @@ class UserAccess
     public function handle(Request $request, Closure $next, ...$roles): Response
     {
         // Cek apakah pengguna terautentikasi
-        if (!auth()->check()) {
+        if (! auth()->check()) {
             return redirect()->route('login'); // Redirect ke halaman login jika tidak terautentikasi
         }
 

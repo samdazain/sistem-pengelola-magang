@@ -14,6 +14,7 @@ class JobPositionController extends Controller
     public function index()
     {
         $jobPositions = JobPosition::whereNull('deleted_at')->orderBy('created_at', 'desc')->get();
+
         return view('admin.pages.job_position.index', compact('jobPositions'));
     }
 
@@ -28,37 +29,38 @@ class JobPositionController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
 
-    $validatedData = $request->validate([
-        'title' => 'required|string|max:255',
-        'location' => 'required|string',
-        'status' => 'required|string',
-        'closing_date' => 'required|date',
-        'announcement_date' => 'required|date',
-        'description' => 'required|string',
-        'duration' => 'required|string',
-        'education' => 'required|string',
-        'requirements' => 'required|string',
-        'quota' => 'required|string'
-    ]);
+        $validatedData = $request->validate([
+            'title' => 'required|string|max:255',
+            'location' => 'required|string',
+            'status' => 'required|string',
+            'closing_date' => 'required|date',
+            'announcement_date' => 'required|date',
+            'description' => 'required|string',
+            'duration' => 'required|string',
+            'education' => 'required|string',
+            'requirements' => 'required|string',
+            'quota' => 'required|string',
+        ]);
 
-    // Membuat instance model baru
-    $jobPosition = new JobPosition();
-    $jobPosition->title = $validatedData['title'];
-    $jobPosition->description = $validatedData['description'];
-    $jobPosition->location = $validatedData['location'];
-    $jobPosition->closing_date = $validatedData['closing_date'];
-    $jobPosition->announcement_date = $validatedData['announcement_date'];
-    $jobPosition->requirements = $validatedData['requirements'];
-    $jobPosition->duration = $validatedData['duration'];
-    $jobPosition->education = $validatedData['education'];
-    $jobPosition->status = $validatedData['status'];
-    $jobPosition->quota = $validatedData['quota'];
+        // Membuat instance model baru
+        $jobPosition = new JobPosition;
+        $jobPosition->title = $validatedData['title'];
+        $jobPosition->description = $validatedData['description'];
+        $jobPosition->location = $validatedData['location'];
+        $jobPosition->closing_date = $validatedData['closing_date'];
+        $jobPosition->announcement_date = $validatedData['announcement_date'];
+        $jobPosition->requirements = $validatedData['requirements'];
+        $jobPosition->duration = $validatedData['duration'];
+        $jobPosition->education = $validatedData['education'];
+        $jobPosition->status = $validatedData['status'];
+        $jobPosition->quota = $validatedData['quota'];
 
-    $jobPosition->save();
+        $jobPosition->save();
 
-    return redirect()->route('job-position.index')->with('success', 'Lowongan berhasil ditambahkan.');
+        return redirect()->route('job-position.index')->with('success', 'Lowongan berhasil ditambahkan.');
     }
 
     /**
@@ -67,6 +69,7 @@ class JobPositionController extends Controller
     public function show($id)
     {
         $jobDetail = JobPosition::find($id);
+
         return view('admin.pages.job_position.show', compact('jobDetail'));
 
     }
@@ -77,6 +80,7 @@ class JobPositionController extends Controller
     public function edit(string $id)
     {
         $jobDetail = JobPosition::find($id);
+
         return view('admin.pages.job_position.edit', compact('jobDetail'));
     }
 
@@ -95,10 +99,10 @@ class JobPositionController extends Controller
             'duration' => 'required|string',
             'education' => 'required|string',
             'requirements' => 'required|string',
-            'quota' => 'required|string'
+            'quota' => 'required|string',
         ]);
 
-         $jobPosition = JobPosition::findOrFail($id);
+        $jobPosition = JobPosition::findOrFail($id);
         $jobPosition->title = $validatedData['title'];
         $jobPosition->description = $validatedData['description'];
         $jobPosition->location = $validatedData['location'];
@@ -122,6 +126,7 @@ class JobPositionController extends Controller
     {
         $jobPosition = JobPosition::find($id);
         $jobPosition->delete();
+
         return redirect()->route('job-position.index')->with('success', 'Lowongan berhasil dihapus');
     }
 }

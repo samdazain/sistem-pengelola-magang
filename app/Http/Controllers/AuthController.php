@@ -28,7 +28,7 @@ class AuthController extends Controller
         } else {
             return redirect()->route('login')
                 ->withErrors([
-                    'email' => 'Email or password does not match'
+                    'email' => 'Email or password does not match',
                 ])->onlyInput('email');
         }
     }

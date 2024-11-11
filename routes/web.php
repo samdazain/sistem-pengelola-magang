@@ -7,7 +7,6 @@ use App\Http\Controllers\Admin\JobPositionController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\User\JobVacancyController;
 use App\Http\Controllers\User\ProfileController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware(['guest'])->group(function () {
@@ -18,7 +17,6 @@ Route::middleware(['guest'])->group(function () {
 Route::get('/', function () {
     return redirect('/dashboard');
 });
-
 
 Route::get('/register', [AuthController::class, 'create'])->name('register.create');
 Route::post('/register', [AuthController::class, 'store'])->name('register.store');
