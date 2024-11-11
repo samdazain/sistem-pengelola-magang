@@ -34,7 +34,7 @@
     </nav>
 
 
-    <section class="container mx-auto px-4 mt-6 sm:mt-10">
+    <section class="container mx-auto px-4 mt-6 sm:mt-10 lg:w-3/5">
         <div class="bg-white rounded-lg border stroke-neutralLight ">
             <div class="px-4 py-8">
                 <h1 class="text-4xl font-bold">Temukan Karir Impianmu</h1>
@@ -84,133 +84,30 @@
     </section>
 
     <section class="container mx-auto px-4 mt-6">
-        <p>Total Posisi: 53 Total Perusahaan: 15 Total Job: 26</p>
+        <p class="text-center">Total Posisi: 53 Total Perusahaan: 15 Total Job: 26</p>
 
-        <div class="mt-4 flex flex-col lg:flex-row gap-4 items-start">
-            <div class="w-full lg:w-2/5 grid gap-4">
+        <div class="mt-4 flex flex-col justify-center lg:flex-row gap-4 items-start">
+            <div class="w-full lg:w-3/5 grid gap-4">
                 <!-- Lowongan 1 -->
-                <div class="grid gap-2 bg-white px-5 py-6 rounded-lg border">
-                    <h2 class="text-2xl font-semibold">Internship Indirect Procurement - Strategic Construction</h2>
-                    <p class="text-primary mb-1">1 Posisi . 37 Pelamar</p>
-                    <div class="flex gap-4 mb-3 flex-wrap">
-                        <div class="border border-textAccent rounded-md bg-accent">
-                            <p class="text-textAccent font-semibold px-4 py-2">Magang Umum</p>
-                        </div>
-                        <div class="border border-gray-400 bg-gray-200 rounded-md">
-                            <p class="text-text px-4 py-2">6 Bulan</p>
-                        </div>
-                        <div class="border border-gray-400 bg-gray-200 rounded-md">
-                            <p class="text-text px-4 py-2">Onsite</p>
-                        </div>
-                    </div>
-                    <p class="text-text border-t pt-3">Penutupan: <span class="text-primary">5 Oktober 2024</span></p>
-                </div>
+                @foreach ($job as $j)
+                <a href="{{route('job.detail', $j->id)}}">
+                    <div class="grid gap-2 bg-white px-5 py-6 rounded-lg border">
+                        <h2 class="text-2xl font-semibold">{{$j -> title}}</h2>
+                        <p class="text-primary mb-1">{{$j -> quota}} Posisi . 37 Pelamar</p>
+                        <div class="flex gap-4 mb-3 flex-wrap">
 
-                <!-- Lowongan 2 -->
-                <div class="grid gap-2 bg-white px-5 py-6 rounded-lg border">
-                    <h2 class="text-2xl font-semibold">Internship Marketing Digital - Creative Solutions</h2>
-                    <p class="text-primary mb-1">2 Posisi . 20 Pelamar</p>
-                    <div class="flex gap-4 mb-3 flex-wrap">
-                        <div class="border border-textAccent rounded-md bg-accent">
-                            <p class="text-textAccent font-semibold px-4 py-2">Magang Kreatif</p>
-                        </div>
-                        <div class="border border-gray-400 bg-gray-200 rounded-md">
-                            <p class="text-text px-4 py-2">4 Bulan</p>
-                        </div>
-                        <div class="border border-gray-400 bg-gray-200 rounded-md">
-                            <p class="text-text px-4 py-2">Remote</p>
-                        </div>
-                    </div>
-                    <p class="text-text border-t pt-3">Penutupan: <span class="text-primary">15 Oktober 2024</span></p>
-                </div>
-
-                <!-- Lowongan 3 -->
-                <div class="grid gap-2 bg-white px-5 py-6 rounded-lg border">
-                    <h2 class="text-2xl font-semibold">Internship Software Development - Tech Innovations</h2>
-                    <p class="text-primary mb-1">3 Posisi . 50 Pelamar</p>
-                    <div class="flex gap-4 mb-3 flex-wrap">
-                        <div class="border border-textAccent rounded-md bg-accent">
-                            <p class="text-textAccent font-semibold px-4 py-2">Magang IT</p>
-                        </div>
-                        <div class="border border-gray-400 bg-gray-200 rounded-md">
-                            <p class="text-text px-4 py-2">5 Bulan</p>
-                        </div>
-                        <div class="border border-gray-400 bg-gray-200 rounded-md">
-                            <p class="text-text px-4 py-2">Hybrid</p>
-                        </div>
-                    </div>
-                    <p class="text-text border-t pt-3">Penutupan: <span class="text-primary">1 November 2024</span></p>
-                </div>
-            </div>
-
-            <div class="w-full lg:w-3/5 flex flex-col bg-white px-8 py-8 rounded-lg border gap-4">
-                <div class="flex items-center gap-2 lg:gap-8">
-                    <div class="w-9/12">
-                        <h2 class="text-2xl md:text-3xl font-semibold mb-3">Internship Indirect Procurement - Strategic
-                            Construction
-                        </h2>
-                        <div class="flex gap-2 items-center">
-                            <img src="{{ asset('assets/images/user/‌Bag - 2.svg') }}" alt="Bag">
-                            <p>Onsite</p>
-                        </div>
-                    </div>
-                    <div class="w-3/12  bg-white">
-                        <div class="grid gap-4">
-                            <div class="border border-textAccent rounded-lg bg-accent">
-                                <p class="text-textAccent font-semibold px-4 py-3 text-center">Magang Umum</p>
+                            <div class="border border-gray-400 bg-gray-200 rounded-md">
+                                <p class="text-text px-4 py-2">{{$j->duration}}</p>
                             </div>
-                            <p class="text-primary">1 Posisi • 37 Pelamar</p>
-                            <div class="rounded-lg bg-primary">
-                                <p class="text-white font-semibold px-4 py-3 text-center">Daftar Sekarang</p>
+                            <div class="border border-gray-400 bg-gray-200 rounded-md">
+                                <p class="text-text px-4 py-2">{{$j->location}}</p>
                             </div>
                         </div>
+                        <p class="text-text border-t pt-3">Penutupan: <span class="text-primary">{{$j -> formatted_closing_date }}</span></p>
                     </div>
-                </div>
+                </a>
 
-                <h3 class="mt-4 text-xl font-bold pb-4 border-b-2 border-primary">Deskripsi Lowongan</h3>
-                <div class="flex gap-3 items-start pt-1 pb-4 border-b-2 border-gray-200">
-                    <img src="{{ asset('assets/images/user/Shield - check.svg') }}" alt="Bag">
-                    <div>
-                        <p class="font-semibold mb-1">Sertifikat</p>
-                        <p>Kamu akan mendapatkan sertifikat yang dijamin oleh Kementerian BUMN</p>
-                    </div>
-                </div>
-                <div class="flex gap-3 items-start pt-1 pb-4 border-b-2 border-gray-200">
-                    <img src="{{ asset('assets/images/user/Bag.svg') }}" alt="Bag">
-                    <div>
-                        <p class="font-semibold mb-1">Pendidikan</p>
-                        <p>Jurusan: Teknik Sipil, Teknik Kelistrikan, Teknik Elektro.</p>
-                    </div>
-                </div>
-                <div class="flex gap-3 items-start pt-1 pb-4 border-b-2 border-gray-200">
-                    <img src="{{ asset('assets/images/user/Document.svg') }}" alt="Bag">
-                    <div>
-                        <p class="font-semibold mb-1">Persyaratan Dokumen</p>
-                        <p>Berkas: CV, FC KTP, FC KK, transkrip</p>
-                    </div>
-                </div>
-                <div class="flex gap-3 items-start pt-1 pb-4 border-b-2 border-gray-200">
-                    <img src="{{ asset('assets/images/user/Todo.svg') }}" alt="Bag">
-                    <div class="grid gap-1">
-                        <p class="font-semibold mb-1">Tanggal Penting</p>
-                        <p>&#8226; Durasi: 6 bulan</p>
-                        <p>&#8226; Penutupan lamaran: 5 Oktober 2024</p>
-                        <p>&#8226; Pengumuman lolos seleksi: 13 Oktober 2024</p>
-                    </div>
-                </div>
-                <div class="gap-3 items-start pt-1 pb-4 border-b-2 border-gray-200">
-                    <p class="font-semibold">Rincian Lowongan</p>
-                    <div class="grid mt-1 gap-1">
-                        <p>1. Mahasiswa/i aktif S1 Teknik Sipil, Teknik Kelistrikan, Teknik Elektro.</p>
-                        <p>2. Mampu mengolah data menggunakan rumus dan pivot dengan Microsoft Excel.</p>
-                        <p>3. Mampu membuat laporan dengan PowerPoint, Canva, dan lain-lain.</p>
-                        <p>4. Mengetahui informasi terkait proses pengadaan secara umum.</p>
-                        <p>5. Mampu membantu melakukan proses administrasi pengadaan; melakukan evaluasi teknis
-                            pengadaan konstruksi dan mekanik elektrikal; memahami dan membantu dalam perencanaan
-                            pengadaan terkait.</p>
-                        <p>6. Penempatan di Jakarta Pusat.</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
 

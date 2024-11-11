@@ -42,6 +42,14 @@
                     <label for="announcement_date" class="form-label">Pengumuman</label>
                     <input type="date" class="form-control"  value="{{$jobDetail->announcement_date}}" name="announcement_date" id="announcement_date">
                 </div>
+                <div class="col-6 mb-3">
+                    <label for="announcement_date" class="form-label">Education</label>
+                    <input type="text" class="form-control"  value="{{$jobDetail->education}}" name="education" id="announcement_date">
+                </div>
+                <div class="col-6 mb-3">
+                    <label for="announcement_date" class="form-label">Duration</label>
+                    <input type="text" class="form-control"  value="{{$jobDetail->duration}}" name="duration" id="announcement_date">
+                </div>
                 <div class="col-6">
                     <label for="editor1">Deskripsi</label>
                     <textarea id="editor1" rows="10" cols="80"  required name="description">{{$jobDetail->description}}</textarea>
