@@ -88,33 +88,70 @@
 
         <div class="mt-4 flex flex-col justify-center lg:flex-row gap-4 items-start">
             <div class="w-full lg:w-3/5 grid gap-4">
-                <!-- Lowongan 1 -->
-                @foreach ($job as $j)
-                <a href="{{route('job.detail', $j->id)}}">
+                @foreach ($jobs as $job)
+                <a href="{{ route('job.detail', $job->id) }}">
                     <div class="grid gap-2 bg-white px-5 py-6 rounded-lg border">
-                        <h2 class="text-2xl font-semibold">{{$j -> title}}</h2>
-                        <p class="text-primary mb-1">{{$j -> quota}} Posisi . 37 Pelamar</p>
+                        <h2 class="text-2xl font-semibold">{{ $job->title }}</h2>
+                        <p class="text-primary mb-1">{{ $job->quota }} Posisi . 37 Pelamar</p>
                         <div class="flex gap-4 mb-3 flex-wrap">
-
                             <div class="border border-gray-400 bg-gray-200 rounded-md">
-                                <p class="text-text px-4 py-2">{{$j->duration}} bulan</p>
+                                <p class="text-text px-4 py-2">{{ $job->duration }} bulan</p>
                             </div>
                             <div class="border border-gray-400 bg-gray-200 rounded-md">
-                                <p class="text-text px-4 py-2">{{$j->location}}</p>
+                                <p class="text-text px-4 py-2">{{ $job->location }}</p>
                             </div>
                         </div>
                         <p class="text-text border-t pt-3">Penutupan: <span
-                                class="text-primary">{{$j -> formatted_closing_date }}</span></p>
+                                class="text-primary">{{ $job->formatted_closing_date }}</span></p>
                     </div>
                 </a>
-
                 @endforeach
             </div>
         </div>
 
-
-        <!-- Pagination Section-->
+        <!-- Pagination Section -->
         <div class="flex flex-wrap gap-4 mt-4 justify-center">
+            <!-- Previous Page Link -->
+            @if ($jobs->onFirstPage())
+            <span
+                class="w-12 h-12 flex items-center justify-center font-extrabold bg-gray-200 text-gray-400 rounded-full">&lt;&lt;</span>
+            @else
+            <a href="{{ $jobs->url(1) }}"
+                class="w-12 h-12 flex items-center justify-center font-extrabold bg-white text-text rounded-full">&lt;&lt;</a>
+            <a href="{{ $jobs->previousPageUrl() }}"
+                class="w-12 h-12 flex items-center justify-center font-extrabold bg-white text-text rounded-full">&lt;</a>
+            @endif
+
+            <!-- Page Number Links -->
+            @foreach (range(1, $jobs->lastPage()) as $page)
+            @if ($page == $jobs->currentPage())
+            <span
+                class="w-12 h-12 flex items-center justify-center font-extrabold bg-primary text-white rounded-full">{{ $page }}</span>
+            @elseif ($page == 1 || $page == $jobs->lastPage() || abs($page - $jobs->currentPage()) < 2) <a
+                href="{{ $jobs->url($page) }}"
+                class="w-12 h-12 flex items-center justify-center font-extrabold bg-white text-text rounded-full">
+                {{ $page }}</a>
+                @elseif ($page == 2 || $page == $jobs->lastPage() - 1)
+                <span
+                    class="w-12 h-12 flex items-center justify-center font-extrabold bg-white text-text rounded-full">...</span>
+                @endif
+                @endforeach
+
+                <!-- Next Page Link -->
+                @if ($jobs->hasMorePages())
+                <a href="{{ $jobs->nextPageUrl() }}"
+                    class="w-12 h-12 flex items-center justify-center font-extrabold bg-white text-text rounded-full">&gt;</a>
+                <a href="{{ $jobs->url($jobs->lastPage()) }}"
+                    class="w-12 h-12 flex items-center justify-center font-extrabold bg-white text-text rounded-full">&gt;&gt;</a>
+                @else
+                <span
+                    class="w-12 h-12 flex items-center justify-center font-extrabold bg-gray-200 text-gray-400 rounded-full">&gt;&gt;</span>
+                @endif
+        </div>
+        <!-- <div class="flex flex-wrap gap-4 mt-4 justify-center">
+            {{ $jobs->links('pagination::tailwind') }}
+        </div> -->
+        <!-- <div class="flex flex-wrap gap-4 mt-4 justify-center">
             <p class="w-12 h-12 flex items-center justify-center font-extrabold bg-primary text-white rounded-full">1
             </p>
             <p class="w-12 h-12 flex items-center justify-center font-extrabold bg-white text-text rounded-full">2</p>
@@ -126,7 +163,7 @@
             </p>
             <p class="w-12 h-12 flex items-center justify-center font-extrabold bg-white text-text rounded-full">
                 &gt;&gt;</p>
-        </div>
+        </div> -->
         <!-- Pagination Section-->
 
     </section>
